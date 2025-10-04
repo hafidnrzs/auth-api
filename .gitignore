@@ -1,2 +1,5 @@
 node_modules
+
+# environment variables
 .env
+.test.env
