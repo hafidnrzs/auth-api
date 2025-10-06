@@ -7,8 +7,8 @@
   "scripts": {
     "start": "node src/app.js",
     "start:dev": "nodemon src/app.js",
-    "test": "jest --setupFiles --coverage dotenv/config",
-    "test:watch": "jest --watchAll --coverage --setupFiles dotenv/config",
+    "test": "jest --setupFiles dotenv/config --coverage",
+    "test:watch": "jest --watchAll --setupFiles dotenv/config --coverage",
     "migrate": "node-pg-migrate",
     "migrate:test": "node-pg-migrate --envPath .test.env"
   },
@@ -30,6 +30,9 @@
     "globals": "^16.4.0",
     "jest": "^30.2.0",
     "node-pg-migrate": "^8.0.3",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "babel-jest": "^30.2.0"
   }
 }
