@@ -1,4 +1,4 @@
-import PasswordHash from "../../Applications/security/PasswordHash";
+import PasswordHash from "../../Applications/security/PasswordHash.js";
 
 class BcryptPasswordHash extends PasswordHash {
   constructor(bcrypt, saltRound = 10) {

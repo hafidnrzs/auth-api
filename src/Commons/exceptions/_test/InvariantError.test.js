@@ -1,5 +1,5 @@
-/* eslint-disable no-undef */
-const InvariantError = require("../InvariantError");
+import { describe, it, expect } from "@jest/globals";
+import InvariantError from "../InvariantError.js";
 
 describe("InvariantError", () => {
   it("should create an error correctly", () => {

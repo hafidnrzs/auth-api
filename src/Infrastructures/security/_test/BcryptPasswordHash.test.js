@@ -1,6 +1,6 @@
-/* eslint-disable no-undef */
+import { describe, it, expect, jest } from "@jest/globals";
 import bcrypt from "bcrypt";
-import BcryptPasswordHash from "../BcryptPasswordHash";
+import BcryptPasswordHash from "../BcryptPasswordHash.js";
 
 describe("BcryptPasswordHash", () => {
   describe("hash function", () => {

@@ -1,5 +1,5 @@
-import UsersHandler from "./handler";
-import routes from "./routes";
+import UsersHandler from "./handler.js";
+import routes from "./routes.js";
 
 export default {
   name: "users",

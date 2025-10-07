@@ -1,5 +1,5 @@
-/* eslint-disable no-undef */
-const AuthenticationError = require("../AuthenticationError");
+import { describe, it, expect } from "@jest/globals";
+import AuthenticationError from "../AuthenticationError.js";
 
 describe("AuthenticationError", () => {
   it("should create AuthenticationError correctly", () => {

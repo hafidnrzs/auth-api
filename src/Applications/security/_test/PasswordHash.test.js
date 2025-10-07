@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+import { describe, it, expect } from "@jest/globals";
 import PasswordHash from "../PasswordHash.js";
 
 describe("PasswordHash interface", () => {

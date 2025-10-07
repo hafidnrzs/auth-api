@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
-import pool from "../../database/postgres/pool";
-import UsersTableTestHelper from "../../../../tests/UsersTableTestHelper";
-import container from "../../container";
-import createServer from "../createServer";
+import pool from "../../database/postgres/pool.js";
+import UsersTableTestHelper from "../../../../tests/UsersTableTestHelper.js";
+import container from "../../container.js";
+import createServer from "../createServer.js";
 
 describe("HTTP server", () => {
   afterAll(async () => {

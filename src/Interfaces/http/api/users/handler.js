@@ -1,4 +1,4 @@
-import AddUserUseCase from "../../../../Applications/use_case/AddUserUseCase";
+import AddUserUseCase from "../../../../Applications/use_case/AddUserUseCase.js";
 
 class UsersHandler {
   constructor(container) {

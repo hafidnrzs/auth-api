@@ -1,6 +1,6 @@
-/* eslint-disable no-undef */
-import DomainErrorTranslator from "../DomainErrorTranslator";
-import InvariantError from "../InvariantError";
+import { describe, it, expect } from "@jest/globals";
+import DomainErrorTranslator from "../DomainErrorTranslator.js";
+import InvariantError from "../InvariantError.js";
 
 describe("DomainErrorTranslator", () => {
   it("should translate error correctly", () => {

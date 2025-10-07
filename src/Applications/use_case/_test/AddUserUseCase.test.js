@@ -1,9 +1,9 @@
-/* eslint-disable no-undef */
-import RegisterUser from "../../../Domains/users/entities/RegisterUser";
-import RegisteredUser from "../../../Domains/users/entities/RegisteredUser";
-import UserRepository from "../../../Domains/users/UserRepository";
-import PasswordHash from "../../security/PasswordHash";
-import AddUserUseCase from "../AddUserUseCase";
+import { describe, it, expect, jest } from "@jest/globals";
+import RegisterUser from "../../../Domains/users/entities/RegisterUser.js";
+import RegisteredUser from "../../../Domains/users/entities/RegisteredUser.js";
+import UserRepository from "../../../Domains/users/UserRepository.js";
+import PasswordHash from "../../security/PasswordHash.js";
+import AddUserUseCase from "../AddUserUseCase.js";
 
 describe("AddUserUseCase", () => {
   it("should orchestrating the add user action correctly", async () => {

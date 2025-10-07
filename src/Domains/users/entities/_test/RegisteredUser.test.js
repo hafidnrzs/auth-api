@@ -1,5 +1,5 @@
-/* eslint-disable no-undef */
-import RegisteredUser from "../RegisteredUser";
+import { describe, it, expect } from "@jest/globals";
+import RegisteredUser from "../RegisteredUser.js";
 
 describe("a RegisteredUser entities", () => {
   it("should throw error when payload did not contain needed property", () => {

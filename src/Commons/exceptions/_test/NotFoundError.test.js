@@ -1,5 +1,5 @@
-/* eslint-disable no-undef */
-const NotFoundError = require("../NotFoundError");
+import { describe, it, expect } from "@jest/globals";
+import NotFoundError from "../NotFoundError.js";
 
 describe("NotFoundError", () => {
   it("should create NotFoundError correctly", () => {

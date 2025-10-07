@@ -1,5 +1,5 @@
-/* eslint-disable no-undef */
-const ClientError = require("../ClientError");
+import { describe, it, expect } from "@jest/globals";
+import ClientError from "../ClientError.js";
 
 describe("ClientError", () => {
   it("should throw error when directly use it", () => {

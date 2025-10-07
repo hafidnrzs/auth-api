@@ -4,16 +4,16 @@ import { createContainer } from "instances-container";
 // external agency
 import { nanoid } from "nanoid";
 import bcrypt from "bcrypt";
-import pool from "./database/postgres/pool";
+import pool from "./database/postgres/pool.js";
 
 // service (repository, helper, manager, etc)
-import UserRepositoryPostgres from "./repository/UserRepositoryPostgres";
-import BcryptPasswordHash from "./security/BcryptPasswordHash";
+import UserRepositoryPostgres from "./repository/UserRepositoryPostgres.js";
+import BcryptPasswordHash from "./security/BcryptPasswordHash.js";
 
 // use case
-import AddUserUseCase from "../Applications/use_case/AddUserUseCase";
-import UserRepository from "../Domains/users/UserRepository";
-import PasswordHash from "../Applications/security/PasswordHash";
+import AddUserUseCase from "../Applications/use_case/AddUserUseCase.js";
+import UserRepository from "../Domains/users/UserRepository.js";
+import PasswordHash from "../Applications/security/PasswordHash.js";
 
 // creating container
 const container = createContainer();

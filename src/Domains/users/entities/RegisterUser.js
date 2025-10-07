@@ -1,4 +1,4 @@
-export default class RegisterUser {
+class RegisterUser {
   constructor(payload) {
     this._verifyPayload(payload);
 
@@ -31,3 +31,5 @@ export default class RegisterUser {
     }
   }
 }
+
+export default RegisterUser;

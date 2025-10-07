@@ -1,4 +1,4 @@
-import InvariantError from "./InvariantError";
+import InvariantError from "./InvariantError.js";
 
 const DomainErrorTranslator = {
   translate(error) {

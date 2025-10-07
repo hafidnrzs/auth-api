@@ -7,8 +7,8 @@
   "scripts": {
     "start": "node src/app.js",
     "start:dev": "nodemon src/app.js",
-    "test": "jest --setupFiles dotenv/config --coverage",
-    "test:watch": "jest --watchAll --setupFiles dotenv/config --coverage",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --setupFiles dotenv/config --coverage",
+    "test:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --watchAll --setupFiles dotenv/config --coverage",
     "migrate": "node-pg-migrate",
     "migrate:test": "node-pg-migrate --envPath .test.env"
   },
@@ -25,11 +25,9 @@
     "pg": "^8.16.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.9",
-    "@babel/preset-env": "^7.22.9",
     "@eslint/js": "^9.37.0",
     "@types/jest": "^30.0.0",
-    "babel-jest": "^30.2.0",
+    "cross-env": "^10.1.0",
     "eslint": "^9.37.0",
     "globals": "^16.4.0",
     "jest": "^30.2.0",

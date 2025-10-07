@@ -1,8 +1,8 @@
 import Hapi from "@hapi/hapi";
-import users from "../../Interfaces/http/api/users";
-import config from "../../Commons/config";
-import DomainErrorTranslator from "../../Commons/exceptions/DomainErrorTranslator";
-import ClientError from "../../Commons/exceptions/ClientError";
+import users from "../../Interfaces/http/api/users/index.js";
+import config from "../../Commons/config.js";
+import DomainErrorTranslator from "../../Commons/exceptions/DomainErrorTranslator.js";
+import ClientError from "../../Commons/exceptions/ClientError.js";
 
 const createServer = async (container) => {
   const server = Hapi.server({
