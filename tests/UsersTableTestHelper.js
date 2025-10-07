@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 import pool from "../src/Infrastructures/database/postgres/pool";
 
-export const UsersTableTestHelper = {
+const UsersTableTestHelper = {
   async addUser({
     id = "user-123",
     username = "dicoding",
@@ -30,3 +30,5 @@ export const UsersTableTestHelper = {
     await pool.query("TRUNCATE TABLE users");
   },
 };
+
+export default UsersTableTestHelper;
