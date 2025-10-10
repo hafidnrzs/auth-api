@@ -1,6 +1,5 @@
 class RegisterUser {
   constructor(payload) {
-    console.debug(payload);
     this._verifyPayload(payload);
 
     const { username, password, fullname } = payload;

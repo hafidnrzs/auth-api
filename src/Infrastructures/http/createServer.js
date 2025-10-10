@@ -1,8 +1,9 @@
 import Hapi from "@hapi/hapi";
-import users from "../../Interfaces/http/api/users/index.js";
 import config from "../../Commons/config.js";
 import DomainErrorTranslator from "../../Commons/exceptions/DomainErrorTranslator.js";
 import ClientError from "../../Commons/exceptions/ClientError.js";
+import users from "../../Interfaces/http/api/users/index.js";
+import authentications from "../../Interfaces/http/api/authentications/index.js";
 
 const createServer = async (container) => {
   const server = Hapi.server({
@@ -14,6 +15,10 @@ const createServer = async (container) => {
   await server.register([
     {
       plugin: users,
+      options: { container },
+    },
+    {
+      plugin: authentications,
       options: { container },
     },
   ]);
