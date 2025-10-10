@@ -1,5 +1,6 @@
 class RegisterUser {
   constructor(payload) {
+    console.debug(payload);
     this._verifyPayload(payload);
 
     const { username, password, fullname } = payload;
@@ -26,7 +27,7 @@ class RegisterUser {
       throw new Error("REGISTER_USER.USERNAME_LIMIT_CHAR");
     }
 
-    if (!username.match(/^[a-zA-Z1-9_]+$/)) {
+    if (!username.match(/^[a-zA-Z0-9_]+$/)) {
       throw new Error("REGISTER_USER.USERNAME_CONTAIN_RESTRICTED_CHARACTER");
     }
   }
