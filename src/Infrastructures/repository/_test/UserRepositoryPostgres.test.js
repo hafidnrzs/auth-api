@@ -6,7 +6,6 @@ import RegisterUser from "../../../Domains/users/entities/RegisterUser.js";
 import RegisteredUser from "../../../Domains/users/entities/RegisteredUser.js";
 import pool from "../../database/postgres/pool.js";
 import UserRepositoryPostgres from "../UserRepositoryPostgres.js";
-import AuthenticationError from "../../../Commons/exceptions/AuthenticationError.js";
 
 describe("UserRepositoryPostgres", () => {
   afterEach(async () => {
@@ -90,14 +89,14 @@ describe("UserRepositoryPostgres", () => {
   });
 
   describe("getPasswordByUsername", () => {
-    it("should throw AuthenticationError when user not found", async () => {
+    it("should throw InvariantError when user not found", async () => {
       // Arrange
       const userRepositoryPostgres = new UserRepositoryPostgres(pool, {});
 
       // Action & Assert
       await expect(
         userRepositoryPostgres.getPasswordByUsername("dicoding")
-      ).rejects.toThrow(AuthenticationError);
+      ).rejects.toThrow(InvariantError);
     });
 
     it("should return username and password when user is found", async () => {
