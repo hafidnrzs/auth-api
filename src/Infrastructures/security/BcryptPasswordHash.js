@@ -1,4 +1,5 @@
 import PasswordHash from "../../Applications/security/PasswordHash.js";
+import AuthenticationError from "../../Commons/exceptions/AuthenticationError.js";
 
 class BcryptPasswordHash extends PasswordHash {
   constructor(bcrypt, saltRound = 10) {
@@ -9,6 +10,14 @@ class BcryptPasswordHash extends PasswordHash {
 
   async hash(password) {
     return this._bcrypt.hash(password, this._saltRound);
+  }
+
+  async comparePassword(password, hashedPassword) {
+    const result = await this._bcrypt.compare(password, hashedPassword);
+
+    if (!result) {
+      throw new AuthenticationError("kredensial yang Anda berikan salah");
+    }
   }
 }
 

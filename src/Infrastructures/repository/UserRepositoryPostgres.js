@@ -1,3 +1,4 @@
+import AuthenticationError from "../../Commons/exceptions/AuthenticationError.js";
 import InvariantError from "../../Commons/exceptions/InvariantError.js";
 import RegisteredUser from "../../Domains/users/entities/RegisteredUser.js";
 import UserRepository from "../../Domains/users/UserRepository.js";
@@ -34,6 +35,34 @@ class UserRepositoryPostgres extends UserRepository {
     const result = await this._pool.query(query);
 
     return new RegisteredUser({ ...result.rows[0] });
+  }
+
+  async getPasswordByUsername(username) {
+    const query = {
+      text: "SELECT password FROM users WHERE username = $1",
+      values: [username],
+    };
+
+    const result = await this._pool.query(query);
+    if (!result.rowCount) {
+      throw new AuthenticationError("kredensial yang Anda berikan salah");
+    }
+
+    return result.rows[0].password;
+  }
+
+  async getIdByUsername(username) {
+    const query = {
+      text: "SELECT id FROM users WHERE username = $1",
+      values: [username],
+    };
+
+    const result = await this._pool.query(query);
+    if (!result.rowCount) {
+      throw new InvariantError("user tidak ditemukan");
+    }
+
+    return result.rows[0].id;
   }
 }
 
