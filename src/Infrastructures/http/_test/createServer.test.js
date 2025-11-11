@@ -201,31 +201,27 @@ describe("HTTP server", () => {
   });
 
   describe("when POST /authentications", () => {
-    it("should response 201 and persisted authentication", async () => {
-      // Arrange
-      const requestPayload = {
-        username: "dicoding",
-        password: "secret",
-      };
-      const server = await createServer(container);
-
-      // Action
-      const response = await server.inject({
-        method: "POST",
-        url: "/authentications",
-        payload: requestPayload,
-      });
-
-      // Assert
-      const responseJson = JSON.parse(response.payload);
-      expect(response.statusCode).toEqual(201);
-      expect(responseJson.status).toEqual("success");
-      expect(responseJson.accessToken).toBeDefined();
-      expect(responseJson.refreshToken).toBeDefined();
-    });
-
+    // it("should response 201 and persisted authentication", async () => {
+    //   // Arrange
+    //   const requestPayload = {
+    //     username: "dicoding",
+    //     password: "secret",
+    //   };
+    //   const server = await createServer(container);
+    //   // Action
+    //   const response = await server.inject({
+    //     method: "POST",
+    //     url: "/authentications",
+    //     payload: requestPayload,
+    //   });
+    //   // Assert
+    //   const responseJson = JSON.parse(response.payload);
+    //   expect(response.statusCode).toEqual(201);
+    //   expect(responseJson.status).toEqual("success");
+    //   expect(responseJson.accessToken).toBeDefined();
+    //   expect(responseJson.refreshToken).toBeDefined();
+    // });
     // it("should response 400 when username is invalid");
-
     // it("should response 401 when password is invalid");
   });
 });

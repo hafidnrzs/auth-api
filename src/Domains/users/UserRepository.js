@@ -7,6 +7,14 @@ class UserRepository {
   async verifyAvailableUsername(username) {
     throw new Error("USER_REPOSITORY.NOT_IMPLEMENTED");
   }
+
+  async getPasswordByUsername(username) {
+    throw new Error("USER_REPOSITORY.NOT_IMPLEMENTED");
+  }
+
+  async getIdByUsername(username) {
+    throw new Error("USER_REPOSITORY.NOT_IMPLEMENTED");
+  }
 }
 
 export default UserRepository;
